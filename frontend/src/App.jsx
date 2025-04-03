@@ -3,6 +3,7 @@ import { useState } from 'react';
 function App() {
   const [chosen, setChosen] = useState('');
   const [guessed, setGuessed] = useState('');
+  const [answer, setAnswer] = useState([]);
 
   return (
     <main>
@@ -25,14 +26,45 @@ function App() {
         />
         <button
           type='submit'
-          onClick={e => {
+          onClick={async e => {
             e.preventDefault();
-            setChosen('');
-            setGuessed('');
+            const response = await fetch('/api/words', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                chosen,
+                guessed,
+              }),
+            });
+            if (response.status == 201) {
+              setChosen('');
+              setGuessed('');
+              const payload = await response.json();
+              const data = payload.data;
+
+              console.log(data);
+
+              setAnswer(data);
+            } else {
+              console.log('error');
+            }
           }}>
           Guess The Word
         </button>
       </form>
+      <h2>List</h2>
+      <ul>
+        {answer.map(letter => {
+          return (
+            <li>
+              {letter.letter}: {letter.result}
+            </li>
+          );
+        })}
+      </ul>
+      ;
     </main>
   );
 }
