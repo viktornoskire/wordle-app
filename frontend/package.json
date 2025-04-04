@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "sass:watch": "sass ./sass/style.scss ./src/index.css --watch"
   },
   "dependencies": {
     "cypress": "^14.2.1",
@@ -24,6 +25,7 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
+    "sass": "^1.86.2",
     "vite": "^6.2.0"
   }
 }

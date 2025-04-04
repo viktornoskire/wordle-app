@@ -1,0 +1,22 @@
+ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+
+  .letter {
+    background-color: grey;
+    padding: 1.5em;
+    margin: 0.5em;
+    border-radius: 0.5em;
+  }
+
+  .correct {
+    background-color: lightgreen;
+  }
+  .misplaced {
+    background-color: yellow;
+  }
+  .incorrect {
+    background-color: lightcoral;
+  }
+}

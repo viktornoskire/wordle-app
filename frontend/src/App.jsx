@@ -3,7 +3,7 @@ import { useState } from 'react';
 function App() {
   const [chosen, setChosen] = useState('');
   const [guessed, setGuessed] = useState('');
-  const [answer, setAnswer] = useState([]);
+  const [answers, setAnswers] = useState([]);
 
   return (
     <main>
@@ -28,7 +28,7 @@ function App() {
           type='submit'
           onClick={async e => {
             e.preventDefault();
-            const response = await fetch('/api/words', {
+            const response = await fetch('/api/check-word', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -39,14 +39,12 @@ function App() {
               }),
             });
             if (response.status == 201) {
-              setChosen('');
               setGuessed('');
               const payload = await response.json();
               const data = payload.data;
 
               console.log(data);
-
-              setAnswer(data);
+              setAnswers([...answers, data]);
             } else {
               console.log('error');
             }
@@ -54,17 +52,24 @@ function App() {
           Guess The Word
         </button>
       </form>
-      <h2>List</h2>
-      <ul>
-        {answer.map(letter => {
-          return (
-            <li>
-              {letter.letter}: {letter.result}
-            </li>
-          );
-        })}
-      </ul>
-      ;
+      <h2>Guesses</h2>
+      {answers.map(answer => {
+        return (
+          <ul>
+            {answer.map(letter => {
+              let className = 'letter ';
+              if (letter.result == 'correct') {
+                className += 'correct';
+              } else if (letter.result == 'misplaced') {
+                className += 'misplaced';
+              } else {
+                className += 'incorrect';
+              }
+              return <li className={className}>{letter.letter}</li>;
+            })}
+          </ul>
+        );
+      })}
     </main>
   );
 }

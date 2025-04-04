@@ -21,10 +21,10 @@ app.get('/about');
 
 app.get('/highscore');
 
-app.post('/api/words', (req, res) => {
-  console.log(req.body.chosen, req.body.guessed);
-
-  const result = wordle(req.body.chosen, req.body.guessed);
+app.post('/api/check-word', (req, res) => {
+  let chosen = req.body.chosen;
+  let guessed = req.body.guessed;
+  const result = wordle(chosen, guessed);
 
   res.status(201).json({ data: result });
 });
