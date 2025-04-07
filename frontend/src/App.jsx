@@ -7,15 +7,30 @@ function App() {
 
   return (
     <main>
+      <button
+        onClick={async () => {
+          const response = await fetch('/api/word', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              charMount: 5,
+              unique: true,
+            }),
+          });
+
+          if (response.status == 200) {
+            const payload = await response.json();
+            const chosen = payload.word;
+
+            setChosen(chosen);
+          }
+        }}>
+        Start
+      </button>
+
       <form>
-        <input
-          type='text'
-          placeholder='chosen word'
-          value={chosen}
-          onChange={e => {
-            setChosen(e.target.value);
-          }}
-        />
         <input
           type='text'
           placeholder='guess the word'
