@@ -28,13 +28,13 @@ export default function loadChosenWord(wordsList, charAmount, unique) {
     });
 
     if (uniqueWords.length == 0) {
-      return 'no word available';
+      return false;
     }
     const word = uniqueWords[Math.floor(Math.random() * uniqueWords.length)];
     return word;
   } else {
     if (competentWords.length == 0) {
-      return 'no word available';
+      return false;
     }
     const word = competentWords[Math.floor(Math.random() * competentWords.length)];
     return word;

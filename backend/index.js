@@ -16,6 +16,7 @@ app.use((req, res, next) => {
 app.get('/', async (req, res) => {
   const buf = await fs.readFile('../frontend/dist/index.html');
   const html = buf.toString();
+  correctWord = '';
   res.send(html);
 });
 
@@ -23,7 +24,7 @@ app.get('/about');
 
 app.get('/highscore');
 
-let word = '';
+let correctWord = '';
 
 app.post('/api/word', async (req, res) => {
   const amount = req.body.charMount;
@@ -32,14 +33,19 @@ app.post('/api/word', async (req, res) => {
   const words = await loadWordsJSON('./src/words/words.json');
 
   const chosenWord = loadChosenWord(words, amount, unique);
-  word = chosenWord;
-  console.log(word);
 
-  res.status(200).json({ msg: "Don't try to cheat!" });
+  if (!chosenWord) {
+    res.status(404).json({ error: 'Could not find word!' });
+  } else {
+    correctWord = chosenWord;
+    console.log(correctWord);
+
+    res.status(200).json({ msg: "Don't try to cheat!" });
+  }
 });
 
 app.post('/api/check-word', (req, res) => {
-  let chosen = word;
+  let chosen = correctWord;
   let guessed = req.body.guessed;
   const result = wordle(chosen, guessed);
 
