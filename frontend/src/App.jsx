@@ -1,34 +1,64 @@
 import { useState } from 'react';
 
 function App() {
-  const [chosen, setChosen] = useState('');
   const [guessed, setGuessed] = useState('');
   const [answers, setAnswers] = useState([]);
+  const [amount, setAmount] = useState(0);
+  const [unique, setUnique] = useState(false);
+  const [settings, setSettings] = useState({});
 
   return (
     <main>
-      <button
-        onClick={async () => {
+      <form
+        onSubmit={async e => {
+          e.preventDefault();
+          setAnswers([]);
+          console.log(amount, unique);
+          console.log(settings);
           const response = await fetch('/api/word', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-              charMount: 5,
-              unique: true,
-            }),
+            body: JSON.stringify(settings),
           });
 
           if (response.status == 200) {
-            const payload = await response.json();
-            const chosen = payload.word;
-
-            setChosen(chosen);
+            console.log('ok');
+          } else {
+            console.log('no');
           }
         }}>
-        Start
-      </button>
+        <label htmlFor='charMount'>Amount of characters</label>
+        <input
+          type='text'
+          className='charMount'
+          onChange={e => {
+            setAmount(Number(e.target.value));
+            setSettings({
+              charMount: amount,
+              unique,
+            });
+          }}
+        />
+        <label htmlFor='unique'>Unique</label>
+        <input
+          type='checkbox'
+          className='unique'
+          onChange={() => {
+            if (unique) {
+              setUnique(false);
+            } else {
+              setUnique(true);
+            }
+            setSettings({
+              charMount: amount,
+              unique,
+            });
+          }}
+        />
+        <button onClick={async () => {}}>Start</button>
+      </form>
 
       <form>
         <input
@@ -49,7 +79,6 @@ function App() {
                 'Content-Type': 'application/json',
               },
               body: JSON.stringify({
-                chosen,
                 guessed,
               }),
             });
@@ -58,7 +87,6 @@ function App() {
               const payload = await response.json();
               const data = payload.data;
 
-              console.log(data);
               setAnswers([...answers, data]);
             } else {
               console.log('error');
