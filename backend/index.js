@@ -27,6 +27,15 @@ app.get('/about', (req, res) => {
   res.send('Hello About');
 });
 
+app.get('/highscores', async (req, res) => {
+  await mongoose.connect(process.env.MONGODB_URL);
+
+  const highscores = await User.find();
+  console.log(highscores);
+
+  res.render('highscores.pug', { highscores });
+});
+
 let correctWord = '';
 let startTime = null;
 let endTime = null;

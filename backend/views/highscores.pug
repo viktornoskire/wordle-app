@@ -1,0 +1,14 @@
+html
+    head 
+        title Highscores 
+
+    body 
+        main 
+            h1 Hello Pug
+            ul 
+                each user in highscores
+                    li 
+                        p= user.user 
+                        p= user.score 
+                        p= user.time
+                        p= user.unique
