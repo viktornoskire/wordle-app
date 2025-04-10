@@ -3,10 +3,13 @@ import fs from 'fs/promises';
 import loadWordsJSON from './src/loadWordJSON.js';
 import wordle from './src/feedback/feedback.js';
 import loadChosenWord from './src/words/words.js';
+import mongoose from 'mongoose';
+import { User } from './src/models.js';
 
 const app = express();
 
 app.use(express.json());
+app.set('view engine', 'pug');
 
 app.use((req, res, next) => {
   console.log(req.method, req.url);
@@ -20,28 +23,30 @@ app.get('/', async (req, res) => {
   res.send(html);
 });
 
-app.get('/about', (req, res) => {});
-
-app.get('/highscore', (req, res) => {});
+app.get('/about', (req, res) => {
+  res.send('Hello About');
+});
 
 let correctWord = '';
 let startTime = null;
 let endTime = null;
 let duration = null;
 
-const HIGHCORES = [];
+let settings = {};
 
 /* //////////
 
   Returns a randomized word
 */ //////////
 app.post('/api/word', async (req, res) => {
-  const amount = req.body.charMount;
-  const unique = req.body.unique;
+  settings = {
+    amount: req.body.charMount,
+    unique: req.body.unique,
+  };
 
   const words = await loadWordsJSON('./src/words/words.json');
 
-  const chosenWord = loadChosenWord(words, amount, unique);
+  const chosenWord = loadChosenWord(words, settings.amount, settings.unique);
 
   if (!chosenWord) {
     res.status(404).json({ error: 'Could not find word!' });
@@ -75,14 +80,17 @@ app.post('/api/check-word', (req, res) => {
 
   Returns a randomized word
 */ //////////
-app.post('/api/user-info', (req, res) => {
+app.post('/api/user-info', async (req, res) => {
   const user = req.body.user;
-  HIGHCORES.push({
-    username: user,
+  await mongoose.connect(process.env.MONGODB_URL);
+
+  await User.insertOne({
+    user: user,
     score: Math.round(duration * 4.5),
     time: duration,
+    unique: settings.unique,
   });
-  console.log(HIGHCORES);
+  res.json({ completed: true });
 });
 
 app.use('/assets', express.static('../frontend/dist/assets'));

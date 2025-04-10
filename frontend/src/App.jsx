@@ -11,17 +11,21 @@ function App() {
   if (window == 'start') {
     return (
       <main>
+        <h2>Settings</h2>
         <SettingsForm
           onSubmit={() => {
             setAnswers([]);
             setWindow('playing');
           }}
         />
+        <a href='/highscores'>Highscores</a>
+        <a href='/about'>About</a>
       </main>
     );
   } else if (window == 'playing') {
     return (
       <main>
+        <h2>Make your guess</h2>
         <GuessForm
           onGuess={async response => {
             const { data } = await response.json();
