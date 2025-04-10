@@ -5,6 +5,7 @@ const highscoreSchema = new mongoose.Schema({
   score: Number,
   time: Number,
   unique: Boolean,
+  guesses: Number,
 });
 
 const User = mongoose.model('User', highscoreSchema);

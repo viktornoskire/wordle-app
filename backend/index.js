@@ -20,6 +20,11 @@ app.get('/', async (req, res) => {
   const buf = await fs.readFile('../frontend/dist/index.html');
   const html = buf.toString();
   correctWord = '';
+  startTime = null;
+  endTime = null;
+  duration = null;
+
+  settings = {};
   res.send(html);
 });
 
@@ -91,13 +96,15 @@ app.post('/api/check-word', (req, res) => {
 */ //////////
 app.post('/api/user-info', async (req, res) => {
   const user = req.body.user;
+  const guesses = req.body.guesses;
   await mongoose.connect(process.env.MONGODB_URL);
 
   await User.insertOne({
     user: user,
-    score: Math.round(duration * 4.5),
+    score: Math.round(duration / 2),
     time: duration,
     unique: settings.unique,
+    guesses,
   });
   res.json({ completed: true });
 });

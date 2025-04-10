@@ -61,6 +61,7 @@ function App() {
               },
               body: JSON.stringify({
                 user,
+                guesses: answers.length,
               }),
             });
             setWindow('start');
