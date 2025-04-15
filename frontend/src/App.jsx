@@ -29,13 +29,11 @@ function App() {
         <main>
           <h2>Make your guess</h2>
           <GuessForm
-            onGuess={async response => {
-              const { data } = await response.json();
+            onGuess={async data => {
               if (data.result == true) {
                 setAnswers([...answers, data.obj]);
                 setWindow('won');
-              } else if (data.result == false) {
-              } else {
+              } else if (data.result == null) {
                 setAnswers([...answers, data.obj]);
               }
             }}

@@ -23,6 +23,12 @@ html .game .header {
   margin-left: auto;
   margin-right: auto;
 }
+html .game main .user-error {
+  display: none;
+}
+html .game main .error-active .user-error {
+  display: block;
+}
 html .game main ul {
   display: flex;
   list-style-type: none;

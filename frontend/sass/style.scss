@@ -26,6 +26,15 @@ html {
     }
 
     main {
+      .user-error {
+        display: none;
+      }
+      .error-active {
+        & .user-error {
+          display: block;
+        }
+      }
+
       ul {
         display: flex;
         list-style-type: none;
