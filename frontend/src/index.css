@@ -1,21 +1,46 @@
-ul {
+html,
+body {
+  margin: 0;
+}
+
+html {
+  background-color: rgb(130, 206, 241);
+}
+html body {
+  background-image: url("./img/background.png");
+  background-size: 100vh;
+}
+html .game {
+  background-color: white;
+  width: 50%;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+html .game .header {
+  display: block;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+html .game main ul {
   display: flex;
   list-style-type: none;
   padding: 0;
 }
-ul .letter {
+html .game main ul .letter {
   background-color: grey;
   padding: 1.5em;
   margin: 0.5em;
   border-radius: 0.5em;
 }
-ul .correct {
+html .game main ul .correct {
   background-color: lightgreen;
 }
-ul .misplaced {
+html .game main ul .misplaced {
   background-color: yellow;
 }
-ul .incorrect {
+html .game main ul .incorrect {
   background-color: lightcoral;
 }
 
