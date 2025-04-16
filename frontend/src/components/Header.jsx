@@ -1,3 +1,5 @@
+import img from '/img/Wordle.png';
+
 export default function Header() {
-  return <img src='./img/Wordle.png' alt='Wordle Game logo' className='header' />;
+  return <img src={img} alt='Wordle Game logo' className='header' />;
 }

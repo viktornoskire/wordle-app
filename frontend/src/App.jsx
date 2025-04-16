@@ -4,6 +4,7 @@ import GuessForm from './components/GuessForm.jsx';
 import GuessList from './components/GuessList.jsx';
 import Header from './components/Header.jsx';
 import HeaderWinner from './components/HeaderWinner.jsx';
+import Rules from './components/Rules.jsx';
 
 function App() {
   const [window, setWindow] = useState('start');
@@ -15,6 +16,7 @@ function App() {
       {window == 'start' || window == 'playing' ? <Header /> : <HeaderWinner />}
       {window == 'start' ? (
         <main>
+          <Rules />
           <h2>Settings</h2>
           <SettingsForm
             onSubmit={() => {

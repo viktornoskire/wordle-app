@@ -1,0 +1,76 @@
+.game {
+  background-color: white;
+  width: 50%;
+  max-width: 800px;
+  min-width: 450px;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+
+  .header {
+    display: block;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  main {
+    .rules {
+      display: block;
+      margin: 0 auto 0 auto;
+      font-size: 1.5rem;
+
+      .rulesTitle {
+        padding-left: 4rem;
+      }
+      .rulesList {
+        padding-left: 2em;
+        width: 80%;
+        margin: 0 auto;
+        li {
+          .green {
+            color: green;
+          }
+          .yellow {
+            color: yellow;
+          }
+          .red {
+            color: red;
+          }
+        }
+      }
+    }
+
+    .user-error {
+      display: none;
+    }
+    .error-active {
+      & .user-error {
+        display: block;
+      }
+    }
+
+    ul {
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+
+      .letter {
+        background-color: grey;
+        padding: 1.5em;
+        margin: 0.5em;
+        border-radius: 0.5em;
+      }
+
+      .correct {
+        background-color: lightgreen;
+      }
+      .misplaced {
+        background-color: yellow;
+      }
+      .incorrect {
+        background-color: lightcoral;
+      }
+    }
+  }
+}
