@@ -4,7 +4,7 @@ import loadWordsJSON from './src/loadWordJSON.js';
 import wordle from './src/feedback/feedback.js';
 import loadChosenWord from './src/words/words.js';
 import mongoose from 'mongoose';
-import { User } from './src/models.js';
+import { Users } from './src/models.js';
 
 const app = express();
 
@@ -33,9 +33,10 @@ app.get('/about', (req, res) => {
 });
 
 app.get('/highscores', async (req, res) => {
-  await mongoose.connect(process.env.MONGODB_URL);
+  await mongoose.connect('mongodb://localhost:27017/highscores');
+  console.log(process.env.MONGODB_URL);
 
-  const highscores = await User.find();
+  const highscores = await Users.find();
   console.log(highscores);
 
   res.render('highscores.pug', { highscores });
@@ -97,9 +98,9 @@ app.post('/api/check-word', (req, res) => {
 app.post('/api/user-info', async (req, res) => {
   const user = req.body.user;
   const guesses = req.body.guesses;
-  await mongoose.connect(process.env.MONGODB_URL);
+  await mongoose.connect('mongodb://localhost:27017/highscores');
 
-  await User.insertOne({
+  await Users.insertOne({
     user: user,
     score: Math.round(duration / 2),
     time: duration,
@@ -110,5 +111,6 @@ app.post('/api/user-info', async (req, res) => {
 });
 
 app.use('/assets', express.static('../frontend/dist/assets'));
+app.use('/static', express.static('./static'));
 
 app.listen(5080);

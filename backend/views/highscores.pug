@@ -1,15 +1,24 @@
 html
     head 
         title Highscores 
+        link(rel="stylesheet", href="/static/style.css")
+        <link href="https://fonts.cdnfonts.com/css/ds-marker-felt" rel="stylesheet">
 
     body 
+        header 
+            img(src="/static/Highscores.png", alt="Highscore logo").headerImage
         main 
-            h1 Hello Pug
-            ul 
+            ul.highscoreList 
+                li.highscoreTitles 
+                    p.hihgscoreTitle Username 
+                    p.hihgscoreTitle Time 
+                    p.hihgscoreTitle Unique 
+                    p.hihgscoreTitle Guesses
                 each user in highscores
-                    li 
-                        p= user.user 
-                        p= user.score 
-                        p= user.time
-                        p= user.unique
-                        p= user.guesses
+                    li.userScores 
+                        p.user= user.user 
+                        p.time= user.time
+                        p.unique= user.unique
+                        p.guesses= user.guesses
+            button
+                a(href="/") Back to start

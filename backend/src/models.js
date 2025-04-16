@@ -8,6 +8,6 @@ const highscoreSchema = new mongoose.Schema({
   guesses: Number,
 });
 
-const User = mongoose.model('User', highscoreSchema);
+const Users = mongoose.model('Users', highscoreSchema);
 
-export { User };
+export { Users };
