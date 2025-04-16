@@ -1,0 +1,57 @@
+html,
+body {
+  margin: 0;
+  font-size: 24px;
+  font-family: "DS Marker Felt", sans-serif;
+}
+
+html {
+  background-color: rgb(130, 206, 241);
+  background-image: url("./background.png");
+  background-size: 100vh;
+}
+html body {
+  background-color: #fff;
+  width: 50%;
+  margin: 0 auto 0 auto;
+  height: 100vh;
+}
+html body .headerImage {
+  width: 80%;
+  margin: 0 auto 2rem auto;
+  display: block;
+}
+html body main .highscoreList {
+  display: block;
+  padding: 0 1rem 0 1rem;
+}
+html body main .highscoreList li {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+html body main .highscoreList li p {
+  display: block;
+  margin: 0 auto 0 auto;
+}
+html body main .highscoreList .highscoreTitles {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+html body main .highscoreList .userScores {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+html body main .highscoreList .userScores .user {
+  grid-column: 1;
+}
+html body main .highscoreList .userScores .time {
+  grid-column: 2;
+}
+html body main .highscoreList .userScores .unique {
+  grid-column: 3;
+}
+html body main .highscoreList .userScores .guesses {
+  grid-column: 4;
+}
+
+/*# sourceMappingURL=style.css.map */
