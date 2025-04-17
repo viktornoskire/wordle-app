@@ -1,4 +1,6 @@
-@use './game.scss';
+@use './startPage.scss';
+@use './playPage.scss';
+@use './winPage.scss';
 
 html,
 body {
@@ -10,4 +12,33 @@ html {
   background-color: rgb(130, 206, 241);
   background-image: url('/img/background.png');
   background-size: 100vh;
+
+  .game {
+    background-color: white;
+    width: 50%;
+    max-width: 800px;
+    min-width: 450px;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+
+    .header {
+      display: block;
+      width: 70%;
+      margin: 2rem auto;
+    }
+  }
+
+  .user-error {
+    display: none;
+  }
+  .error-active {
+    & .user-error {
+      display: block;
+    }
+  }
 }

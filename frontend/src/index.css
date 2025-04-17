@@ -1,64 +1,153 @@
-.game {
-  background-color: white;
-  width: 50%;
-  max-width: 800px;
-  min-width: 450px;
-  height: 100vh;
-  margin-left: auto;
-  margin-right: auto;
+.startPage {
+  padding: 0 4rem;
+  width: 70%;
 }
-.game .header {
-  display: block;
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
+.startPage .rules {
+  font-size: 1.4em;
+  margin-bottom: 4rem;
 }
-.game main .rules {
-  display: block;
-  margin: 0 auto 0 auto;
-  font-size: 1.5rem;
+.startPage .rules li {
+  margin: 1rem 0;
 }
-.game main .rules .rulesTitle {
-  padding-left: 4rem;
+.startPage .rules .rulesList .green {
+  color: #00c300;
 }
-.game main .rules .rulesList {
-  padding-left: 2em;
-  width: 80%;
+.startPage .rules .rulesList .yellow {
+  color: #fff500;
+}
+.startPage .rules .rulesList .red {
+  color: #ff0000;
+}
+.startPage .user-form {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: auto auto auto;
+}
+.startPage .user-form .charMount {
+  outline: none;
+  border-radius: 1rem;
+  border: 2px solid black;
+  padding: 0.4rem;
+  font-size: 1rem;
+  font-family: "DS Marker Felt", sans-serif;
+}
+.startPage .user-form .charMount:focus {
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+}
+.startPage .user-form .user-error {
+  grid-row: 2;
+  color: #ff0000;
+}
+.startPage .user-form .uniqueDiv {
+  display: flex;
+  gap: 2.5rem;
   margin: 0 auto;
 }
-.game main .rules .rulesList li .green {
-  color: green;
+.startPage .user-form .uniqueDiv .uniqueLabel {
+  width: 0.4em;
 }
-.game main .rules .rulesList li .yellow {
-  color: yellow;
+.startPage .user-form .uniqueDiv .uniqueCheckbox {
+  width: 25px;
+  height: 25px;
+  appearance: none;
+  border: 2px solid #444;
+  border-radius: 4px;
+  background-color: white;
 }
-.game main .rules .rulesList li .red {
-  color: red;
+.startPage .user-form .uniqueDiv .uniqueCheckbox:checked {
+  background-color: #00c300;
 }
-.game main .user-error {
-  display: none;
-}
-.game main .error-active .user-error {
+.startPage .user-form .playButton {
   display: block;
+  margin: 1rem auto;
+  width: 100%;
+  font-size: 3rem;
+  grid-row: 3;
+  grid-column: 1/4;
+  background-color: #00c300;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  font-family: "DS Marker Felt", sans-serif;
 }
-.game main ul {
+.startPage .user-form .playButton:hover {
+  background-color: #00e000;
+}
+.startPage .directionBtns {
+  display: flex;
+  justify-content: space-between;
+}
+.startPage .directionBtns .highscoreBtn {
+  background-color: #fff500;
+  border-radius: 15px;
+  border: none;
+  font-size: 2rem;
+  padding: 0.1rem 2rem;
+}
+.startPage .directionBtns .highscoreBtn a {
+  color: white;
+  text-decoration: none;
+}
+.startPage .directionBtns .aboutButton {
+  background-color: #ff0000;
+  border-radius: 15px;
+  border: none;
+  font-size: 2rem;
+  padding: 0.1rem 2rem;
+}
+.startPage .directionBtns .aboutButton a {
+  color: white;
+  text-decoration: none;
+}
+
+.playPage {
+  padding: 0 4rem;
+  width: 70%;
+}
+.playPage ul {
   display: flex;
   list-style-type: none;
   padding: 0;
 }
-.game main ul .letter {
+.playPage ul .letter {
   background-color: grey;
   padding: 1.5em;
   margin: 0.5em;
   border-radius: 0.5em;
 }
-.game main ul .correct {
+.playPage ul .correct {
   background-color: lightgreen;
 }
-.game main ul .misplaced {
+.playPage ul .misplaced {
   background-color: yellow;
 }
-.game main ul .incorrect {
+.playPage ul .incorrect {
+  background-color: lightcoral;
+}
+
+.winPage {
+  padding: 0 4rem;
+  width: 70%;
+}
+.winPage ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+.winPage ul .letter {
+  background-color: grey;
+  padding: 1.5em;
+  margin: 0.5em;
+  border-radius: 0.5em;
+}
+.winPage ul .correct {
+  background-color: lightgreen;
+}
+.winPage ul .misplaced {
+  background-color: yellow;
+}
+.winPage ul .incorrect {
   background-color: lightcoral;
 }
 
@@ -72,6 +161,29 @@ html {
   background-color: rgb(130, 206, 241);
   background-image: url("/img/background.png");
   background-size: 100vh;
+}
+html .game {
+  background-color: white;
+  width: 50%;
+  max-width: 800px;
+  min-width: 450px;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+html .game .header {
+  display: block;
+  width: 70%;
+  margin: 2rem auto;
+}
+html .user-error {
+  display: none;
+}
+html .error-active .user-error {
+  display: block;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export default function SettingsForm({ onSubmit }) {
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState('');
   const [unique, setUnique] = useState(false);
   const [error, setError] = useState(false);
 
@@ -39,9 +39,9 @@ export default function SettingsForm({ onSubmit }) {
           setError(true);
         }
       }}>
-      <label htmlFor='charMount'>Amount of characters</label>
       <input
         type='text'
+        placeholder='No. letters'
         className='charMount'
         onChange={e => {
           if (error) {
@@ -51,19 +51,25 @@ export default function SettingsForm({ onSubmit }) {
         }}
       />
       <small className='user-error'>Enter valid number</small>
-      <label htmlFor='unique'>Unique</label>
-      <input
-        type='checkbox'
-        className='unique'
-        onChange={() => {
-          if (unique) {
-            setUnique(false);
-          } else {
-            setUnique(true);
-          }
-        }}
-      />
-      <button>Start</button>
+      <div className='uniqueDiv'>
+        <label className='uniqueLabel' htmlFor='unique'>
+          Unique
+          <br />
+          letters
+        </label>
+        <input
+          type='checkbox'
+          className='uniqueCheckbox'
+          onChange={() => {
+            if (unique) {
+              setUnique(false);
+            } else {
+              setUnique(true);
+            }
+          }}
+        />
+      </div>
+      <button className='playButton'>Play</button>
     </form>
   );
 }

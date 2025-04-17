@@ -10,7 +10,7 @@ export default function Rules() {
           <strong>Guess the word</strong> - Type in words to figure it out. Unlimited guesses!
         </li>
         <li>
-          <strong>Use color clues</strong>
+          <strong>Use color clues</strong> -
           <br />
           <strong className='green'>Green</strong>: right letter, right spot <br />
           <strong className='yellow'>Yellow</strong>: right letter, misplaced <br />
