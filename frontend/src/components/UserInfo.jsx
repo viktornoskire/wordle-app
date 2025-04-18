@@ -12,9 +12,11 @@ export default function UserInfo({ answers, onSubmit }) {
 
   return (
     <form className={userPage}>
+      <p className='usernameTitle'>Enter your username</p>
       <input
+        className='usernameInput'
         type='text'
-        placeholder='Skriv ditt namn'
+        placeholder='Your username...'
         onChange={e => {
           if (error) {
             setError(false);
@@ -24,6 +26,7 @@ export default function UserInfo({ answers, onSubmit }) {
       />
       <small className='user-error'>Invalid username</small>
       <button
+        className='usernameConfirm'
         onClick={async e => {
           e.preventDefault();
           if (user.length > 0) {

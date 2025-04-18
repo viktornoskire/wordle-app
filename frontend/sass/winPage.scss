@@ -1,0 +1,85 @@
+@use './lib.scss' as *;
+
+.winPage {
+  padding: 0 4rem;
+  width: 70%;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  justify-content: center;
+
+  .winText {
+    margin: 0 auto;
+    font-size: 1.5em;
+  }
+
+  .answerList {
+    display: grid;
+    justify-content: center;
+    font-size: 0.8em;
+
+    ul {
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+
+      .letter {
+        padding: 1.2em;
+        margin: 0 0.5em;
+        border-radius: 0.5em;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 900;
+        box-shadow: 0 0 10px 1px rgb(0, 0, 0, 0.2);
+      }
+
+      .correct {
+        background-color: $green;
+      }
+      .misplaced {
+        background-color: $yellow;
+      }
+      .incorrect {
+        background-color: $red;
+      }
+    }
+  }
+
+  .user-form {
+    display: grid;
+    grid-template-rows: auto;
+    font-size: 1.5em;
+    margin-top: 5rem;
+
+    .usernameTitle {
+      font-size: 1.2em;
+      margin-bottom: 0.2em;
+    }
+    .usernameInput {
+      outline: none;
+      border-radius: 1rem;
+      border: 2px solid black;
+      padding: 0.4rem;
+      font-size: 1rem;
+      font-family: 'DS Marker Felt', sans-serif;
+
+      &:focus {
+        box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+      }
+    }
+    .usernameConfirm {
+      width: 60%;
+      margin: 0.5em auto;
+      background-color: $red;
+      border-radius: 15px;
+      border: none;
+      font-size: 1.8rem;
+      font-family: 'DS Marker Felt', sans-serif;
+      padding: 0.1rem 10%;
+      color: white;
+
+      &:hover {
+        background-color: #df0000;
+      }
+    }
+  }
+}

@@ -1,3 +1,5 @@
+@use './lib.scss' as *;
+
 .startPage {
   padding: 0 4rem;
   width: 70%;
@@ -10,13 +12,13 @@
 
     .rulesList {
       .green {
-        color: #00c300;
+        color: $green;
       }
       .yellow {
-        color: #fff500;
+        color: $yellow;
       }
       .red {
-        color: #ff0000;
+        color: $red;
       }
     }
   }
@@ -41,7 +43,8 @@
 
     .user-error {
       grid-row: 2;
-      color: #ff0000;
+      font-size: 1.2em;
+      color: $red;
     }
 
     .uniqueDiv {
@@ -60,7 +63,7 @@
         background-color: white;
 
         &:checked {
-          background-color: #00c300;
+          background-color: $green;
         }
       }
     }
@@ -72,7 +75,7 @@
       font-size: 3rem;
       grid-row: 3;
       grid-column: 1/4;
-      background-color: #00c300;
+      background-color: $green;
       color: white;
       border-radius: 15px;
       border: none;
@@ -88,7 +91,7 @@
     display: flex;
     justify-content: space-between;
     .highscoreBtn {
-      background-color: #fff500;
+      background-color: $yellow;
       border-radius: 15px;
       border: none;
       font-size: 2rem;
@@ -99,10 +102,14 @@
         color: white;
         text-decoration: none;
       }
+
+      &:hover {
+        background-color: #e2db00;
+      }
     }
 
     .aboutButton {
-      background-color: #ff0000;
+      background-color: $red;
       border-radius: 15px;
       border: none;
       font-size: 2rem;
@@ -112,6 +119,10 @@
       a {
         color: white;
         text-decoration: none;
+      }
+
+      &:hover {
+        background-color: #df0000;
       }
     }
   }

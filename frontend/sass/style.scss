@@ -1,3 +1,4 @@
+@use './lib.scss' as *;
 @use './startPage.scss';
 @use './playPage.scss';
 @use './winPage.scss';
@@ -23,8 +24,8 @@ html {
     margin-right: auto;
     display: flex;
     align-items: center;
-
     flex-direction: column;
+    box-shadow: 0 0 15px 10px rgb(0, 0, 0, 0.2);
 
     .header {
       display: block;

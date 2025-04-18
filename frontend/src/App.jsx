@@ -57,7 +57,7 @@ function App() {
         </main>
       ) : (
         <main className='winPage'>
-          <p>You guessed the word in {answers.length} tries!</p>
+          <p className='winText'>You guessed the word in {answers.length} tries!</p>
           <GuessList className='winningGuess' answers={answers} />
           <UserInfo
             answers={answers}
