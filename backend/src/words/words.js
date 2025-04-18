@@ -40,9 +40,3 @@ export default function loadChosenWord(wordsList, charAmount, unique) {
     return word;
   }
 }
-
-/* const words = await loadWordsJSON('./words.json');
-
-const word = loadChosenWord(words, 7, false);
-console.log(word);
- */

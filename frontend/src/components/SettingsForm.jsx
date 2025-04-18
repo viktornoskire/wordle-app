@@ -29,7 +29,6 @@ export default function SettingsForm({ onSubmit }) {
           });
 
           if (response.status == 200) {
-            console.log('ok');
             onSubmit();
           } else {
             setError(true);
