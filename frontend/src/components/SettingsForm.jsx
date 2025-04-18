@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export default function SettingsForm({ onSubmit }) {
-  const [amount, setAmount] = useState('');
+  const [amount, setAmount] = useState(0);
   const [unique, setUnique] = useState(false);
   const [error, setError] = useState(false);
 

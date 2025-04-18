@@ -37,6 +37,7 @@
 }
 .startPage .user-form .user-error {
   grid-row: 2;
+  font-size: 1.2em;
   color: #ff0000;
 }
 .startPage .user-form .uniqueDiv {
@@ -83,72 +84,144 @@
   border-radius: 15px;
   border: none;
   font-size: 2rem;
-  padding: 0.1rem 2rem;
+  font-family: "DS Marker Felt", sans-serif;
+  padding: 0.1rem 10%;
 }
 .startPage .directionBtns .highscoreBtn a {
   color: white;
   text-decoration: none;
+}
+.startPage .directionBtns .highscoreBtn:hover {
+  background-color: #e2db00;
 }
 .startPage .directionBtns .aboutButton {
   background-color: #ff0000;
   border-radius: 15px;
   border: none;
   font-size: 2rem;
-  padding: 0.1rem 2rem;
+  font-family: "DS Marker Felt", sans-serif;
+  padding: 0.1rem 10%;
 }
 .startPage .directionBtns .aboutButton a {
   color: white;
   text-decoration: none;
+}
+.startPage .directionBtns .aboutButton:hover {
+  background-color: #df0000;
 }
 
 .playPage {
   padding: 0 4rem;
   width: 70%;
 }
-.playPage ul {
+.playPage .user-form {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: auto auto;
+}
+.playPage .user-form .guessInput {
+  border-radius: 15px;
+  border: 2px solid black;
+  outline: none;
+  padding: 0.2em 0 0 1em;
+  font-family: "DS Marker Felt", sans-serif;
+  font-size: 1.2em;
+}
+.playPage .user-form .guessInput:focus {
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+}
+.playPage .user-form .guessBtn {
+  background-color: #ff0000;
+  border: none;
+  color: white;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  padding: 0.2em 2em;
+  width: 90%;
+  margin: 0 auto;
+  font-family: "DS Marker Felt", sans-serif;
+}
+.playPage .user-form .guessBtn:hover {
+  background-color: #df0000;
+}
+.playPage .user-error {
+  grid-row: 2;
+  font-size: 1.2em;
+  color: #ff0000;
+}
+.playPage .answerList {
+  display: grid;
+  justify-content: center;
+}
+.playPage .answerList ul {
   display: flex;
   list-style-type: none;
   padding: 0;
 }
-.playPage ul .letter {
-  background-color: grey;
-  padding: 1.5em;
-  margin: 0.5em;
+.playPage .answerList ul .letter {
+  padding: 1.2em;
+  margin: 0 0.5em;
   border-radius: 0.5em;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
 }
-.playPage ul .correct {
-  background-color: lightgreen;
+.playPage .answerList ul .correct {
+  background-color: #00c300;
 }
-.playPage ul .misplaced {
-  background-color: yellow;
+.playPage .answerList ul .misplaced {
+  background-color: #fff500;
 }
-.playPage ul .incorrect {
-  background-color: lightcoral;
+.playPage .answerList ul .incorrect {
+  background-color: #ff0000;
+}
+.playPage .backToStart {
+  background-color: #ff0000;
+  border: none;
+  color: white;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  padding: 0.2em 2em;
+  position: fixed;
+  bottom: 2rem;
+  left: 28%;
+  font-family: "DS Marker Felt", sans-serif;
+}
+.playPage .backToStart:hover {
+  background-color: #df0000;
 }
 
 .winPage {
   padding: 0 4rem;
   width: 70%;
 }
-.winPage ul {
+.winPage .answerList {
+  display: grid;
+  justify-content: center;
+}
+.winPage .answerList ul {
   display: flex;
   list-style-type: none;
   padding: 0;
 }
-.winPage ul .letter {
-  background-color: grey;
-  padding: 1.5em;
-  margin: 0.5em;
+.winPage .answerList ul .letter {
+  padding: 1.2em;
+  margin: 0 0.5em;
   border-radius: 0.5em;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
 }
-.winPage ul .correct {
-  background-color: lightgreen;
+.winPage .answerList ul .correct {
+  background-color: #00c300;
 }
-.winPage ul .misplaced {
-  background-color: yellow;
+.winPage .answerList ul .misplaced {
+  background-color: #fff500;
 }
-.winPage ul .incorrect {
-  background-color: lightcoral;
+.winPage .answerList ul .incorrect {
+  background-color: #ff0000;
 }
 
 html,
@@ -173,6 +246,7 @@ html .game {
   display: flex;
   align-items: center;
   flex-direction: column;
+  box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
 }
 html .game .header {
   display: block;

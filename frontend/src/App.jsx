@@ -47,11 +47,12 @@ function App() {
           />
           <GuessList answers={answers} />
           <button
+            className='backToStart'
             onClick={() => {
               setWindow('start');
               setAnswers([]);
             }}>
-            Go to start
+            Back to start
           </button>
         </main>
       ) : (

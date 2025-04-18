@@ -1,0 +1,95 @@
+@use './lib.scss' as *;
+
+.playPage {
+  padding: 0 4rem;
+  width: 70%;
+
+  .user-form {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: auto auto;
+
+    .guessInput {
+      border-radius: 15px;
+      border: 2px solid black;
+      outline: none;
+      padding: 0.2em 0 0 1em;
+      font-family: 'DS Marker Felt', sans-serif;
+      font-size: 1.2em;
+
+      &:focus {
+        box-shadow: 0 0 10px 2px rgb(0, 0, 0, 0.2);
+      }
+    }
+
+    .guessBtn {
+      background-color: $red;
+      border: none;
+      color: white;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      padding: 0.2em 2em;
+      width: 90%;
+      margin: 0 auto;
+      font-family: 'DS Marker Felt', sans-serif;
+
+      &:hover {
+        background-color: #df0000;
+      }
+    }
+  }
+
+  .user-error {
+    grid-row: 2;
+    font-size: 1.2em;
+    color: $red;
+  }
+
+  .answerList {
+    display: grid;
+    justify-content: center;
+
+    ul {
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+
+      .letter {
+        padding: 1.2em;
+        margin: 0 0.5em;
+        border-radius: 0.5em;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        box-shadow: 0 0 10px 1px rgb(0, 0, 0, 0.2);
+      }
+
+      .correct {
+        background-color: $green;
+      }
+      .misplaced {
+        background-color: $yellow;
+      }
+      .incorrect {
+        background-color: $red;
+      }
+    }
+  }
+
+  .backToStart {
+    background-color: $red;
+    border: none;
+    color: white;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    padding: 0.2em 2em;
+    position: fixed;
+    bottom: 2rem;
+    left: 28%;
+    font-family: 'DS Marker Felt', sans-serif;
+
+    &:hover {
+      background-color: #df0000;
+    }
+  }
+}

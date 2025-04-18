@@ -33,8 +33,9 @@ export default function GuessForm({ onGuess }) {
         }
       }}>
       <input
+        className='guessInput'
         type='text'
-        placeholder='guess the word'
+        placeholder='Your guess...'
         value={guessed}
         onChange={e => {
           if (error) {
@@ -44,7 +45,9 @@ export default function GuessForm({ onGuess }) {
         }}
       />
       <small className='user-error'>Incorrect word length</small>
-      <button type='submit'>Guess The Word</button>
+      <button className='guessBtn' type='submit'>
+        Guess
+      </button>
     </form>
   );
 }

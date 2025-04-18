@@ -1,6 +1,6 @@
 export default function GuessList({ answers }) {
   return (
-    <div>
+    <div className='answerList'>
       {answers.map(answer => {
         return (
           <ul>
