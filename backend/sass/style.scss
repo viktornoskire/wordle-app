@@ -1,3 +1,6 @@
+@use './lib.scss' as *;
+@use 'highscore.scss';
+
 html,
 body {
   margin: 0;
@@ -18,43 +21,6 @@ html {
       width: 80%;
       margin: 0 auto 2rem auto;
       display: block;
-    }
-
-    main {
-      .highscoreList {
-        display: block;
-        padding: 0 1rem 0 1rem;
-
-        li {
-          display: grid;
-          grid-template-columns: 25% 25% 25% 25%;
-          p {
-            display: block;
-            margin: 0 auto 0 auto;
-          }
-        }
-
-        .highscoreTitles {
-          margin-top: 1rem;
-          margin-bottom: 1rem;
-        }
-        .userScores {
-          font-size: 0.8rem;
-          margin-top: 0.2rem;
-          .user {
-            grid-column: 1;
-          }
-          .time {
-            grid-column: 2;
-          }
-          .unique {
-            grid-column: 3;
-          }
-          .guesses {
-            grid-column: 4;
-          }
-        }
-      }
     }
   }
 }
