@@ -7,18 +7,20 @@ html
     body 
         header 
             img(src="/static/Highscores.png", alt="Highscore logo").headerImage
-        main 
+        main.highscorePage 
             ul.highscoreList 
                 li.highscoreTitles 
                     p.hihgscoreTitle Username 
                     p.hihgscoreTitle Time 
                     p.hihgscoreTitle Unique 
+                    p.highscoreTitle Word Length
                     p.hihgscoreTitle Guesses
                 each user in highscores
                     li.userScores 
                         p.user= user.user 
                         p.time= user.time
                         p.unique= user.unique
+                        p.length= user.length
                         p.guesses= user.guesses
-            button
+            button.backToStart
                 a(href="/") Back to start

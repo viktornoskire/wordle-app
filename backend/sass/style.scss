@@ -1,5 +1,6 @@
 @use './lib.scss' as *;
 @use 'highscore.scss';
+@use './about.scss';
 
 html,
 body {
@@ -17,9 +18,12 @@ html {
     width: 50%;
     margin: 0 auto 0 auto;
     height: 100vh;
+    box-shadow: 0 0 15px 10px rgb(0, 0, 0, 0.2);
+
     .headerImage {
       width: 80%;
       margin: 0 auto 2rem auto;
+      padding-top: 2rem;
       display: block;
     }
   }

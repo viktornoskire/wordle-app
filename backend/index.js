@@ -29,7 +29,7 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-  res.send('Hello About');
+  res.render('about');
 });
 
 app.get('/highscores', async (req, res) => {

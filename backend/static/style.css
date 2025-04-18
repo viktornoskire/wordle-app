@@ -1,3 +1,89 @@
+.highscorePage .highscoreList {
+  display: block;
+  padding: 0 1rem 0 1rem;
+}
+.highscorePage .highscoreList li {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+}
+.highscorePage .highscoreList li p {
+  display: block;
+  margin: 0 auto 0 auto;
+}
+.highscorePage .highscoreList .highscoreTitles {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.highscorePage .highscoreList .userScores {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+.highscorePage .highscoreList .userScores .user {
+  grid-column: 1;
+}
+.highscorePage .highscoreList .userScores .time {
+  grid-column: 2;
+}
+.highscorePage .highscoreList .userScores .unique {
+  grid-column: 3;
+}
+.highscorePage .highscoreList .userScores .length {
+  grid-column: 4;
+}
+.highscorePage .highscoreList .userScores .guesses {
+  grid-column: 5;
+}
+.highscorePage .backToStart {
+  background-color: #ff0000;
+  border: none;
+  color: white;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  padding: 0.2em 2em;
+  position: fixed;
+  bottom: 2rem;
+  left: 28%;
+  font-family: "DS Marker Felt", sans-serif;
+}
+.highscorePage .backToStart a {
+  color: white;
+  text-decoration: none;
+}
+.highscorePage .backToStart:hover {
+  background-color: #df0000;
+}
+
+.aboutPage .textDiv {
+  width: 80%;
+  margin: 0 auto;
+}
+.aboutPage .textDiv .funMessage {
+  margin-top: 4rem;
+}
+.aboutPage .textDiv .mvh {
+  font-size: 0.8em;
+  text-decoration: underline;
+}
+.aboutPage .backToStart {
+  background-color: #ff0000;
+  border: none;
+  color: white;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  padding: 0.2em 2em;
+  position: fixed;
+  bottom: 2rem;
+  left: 28%;
+  font-family: "DS Marker Felt", sans-serif;
+}
+.aboutPage .backToStart a {
+  color: white;
+  text-decoration: none;
+}
+.aboutPage .backToStart:hover {
+  background-color: #df0000;
+}
+
 html,
 body {
   margin: 0;
@@ -15,46 +101,13 @@ html body {
   width: 50%;
   margin: 0 auto 0 auto;
   height: 100vh;
+  box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
 }
 html body .headerImage {
   width: 80%;
   margin: 0 auto 2rem auto;
+  padding-top: 2rem;
   display: block;
-}
-html body main .highscoreList {
-  display: block;
-  padding: 0 1rem 0 1rem;
-}
-html body main .highscoreList li {
-  display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
-}
-html body main .highscoreList li p {
-  display: block;
-  margin: 0 auto 0 auto;
-}
-html body main .highscoreList .highscoreTitles {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-html body main .highscoreList .userScores {
-  font-size: 0.8rem;
-  margin-top: 0.2rem;
-}
-html body main .highscoreList .userScores .user {
-  grid-column: 1;
-}
-html body main .highscoreList .userScores .time {
-  grid-column: 2;
-}
-html body main .highscoreList .userScores .unique {
-  grid-column: 3;
-}
-html body main .highscoreList .userScores .length {
-  grid-column: 4;
-}
-html body main .highscoreList .userScores .guesses {
-  grid-column: 5;
 }
 
 /*# sourceMappingURL=style.css.map */
