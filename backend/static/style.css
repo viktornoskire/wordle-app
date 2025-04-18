@@ -27,7 +27,7 @@ html body main .highscoreList {
 }
 html body main .highscoreList li {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: 20% 20% 20% 20% 20%;
 }
 html body main .highscoreList li p {
   display: block;
@@ -50,8 +50,11 @@ html body main .highscoreList .userScores .time {
 html body main .highscoreList .userScores .unique {
   grid-column: 3;
 }
-html body main .highscoreList .userScores .guesses {
+html body main .highscoreList .userScores .length {
   grid-column: 4;
+}
+html body main .highscoreList .userScores .guesses {
+  grid-column: 5;
 }
 
 /*# sourceMappingURL=style.css.map */

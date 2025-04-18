@@ -33,13 +33,11 @@ app.get('/about', (req, res) => {
 });
 
 app.get('/highscores', async (req, res) => {
-  await mongoose.connect('mongodb://localhost:27017/highscores');
-  console.log(process.env.MONGODB_URL);
+  await mongoose.connect(process.env.MONGODB_URL);
 
   const highscores = await Users.find();
-  console.log(highscores);
 
-  res.render('highscores.pug', { highscores });
+  res.render('highscores', { highscores });
 });
 
 let correctWord = '';
@@ -93,21 +91,25 @@ app.post('/api/check-word', (req, res) => {
 
 /* //////////
 
-  Returns a randomized word
+  
 */ //////////
 app.post('/api/user-info', async (req, res) => {
   const user = req.body.user;
   const guesses = req.body.guesses;
-  await mongoose.connect('mongodb://localhost:27017/highscores');
+  try {
+    await mongoose.connect(process.env.MONGODB_URL);
 
-  await Users.insertOne({
-    user: user,
-    score: Math.round(duration / 2),
-    time: duration,
-    unique: settings.unique,
-    guesses,
-  });
-  res.json({ completed: true });
+    await Users.insertOne({
+      user: user,
+      time: duration,
+      unique: settings.unique,
+      length: correctWord.length,
+      guesses,
+    });
+    res.status(201).json({ completed: true });
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
 });
 
 app.use('/assets', express.static('../frontend/dist/assets'));
