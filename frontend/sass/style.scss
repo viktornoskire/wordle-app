@@ -19,7 +19,7 @@ html {
     width: 50%;
     max-width: 800px;
     min-width: 450px;
-    height: 100vh;
+    min-height: 100vh;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -27,18 +27,18 @@ html {
     flex-direction: column;
     box-shadow: 0 0 15px 10px rgb(0, 0, 0, 0.2);
 
-    .header {
+    .game_header {
       display: block;
       width: 70%;
       margin: 2rem auto;
     }
   }
 
-  .user-error {
+  .user--error {
     display: none;
   }
-  .error-active {
-    & .user-error {
+  .error--active {
+    & .user--error {
       display: block;
     }
   }
