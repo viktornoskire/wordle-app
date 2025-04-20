@@ -12,26 +12,4 @@
       text-decoration: underline;
     }
   }
-
-  .back--to--start {
-    background-color: $red;
-    border: none;
-    color: white;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    padding: 0.2em 2em;
-    position: fixed;
-    bottom: 2rem;
-    left: 28%;
-    font-family: 'DS Marker Felt', sans-serif;
-
-    a {
-      color: white;
-      text-decoration: none;
-    }
-
-    &:hover {
-      background-color: #df0000;
-    }
-  }
 }

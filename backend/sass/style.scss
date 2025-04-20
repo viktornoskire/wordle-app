@@ -15,9 +15,12 @@ html {
   background-size: 100vh;
   body {
     background-color: #fff;
-    width: 50%;
     margin: 0 auto 0 auto;
+    width: 50%;
+    max-width: 800px;
+    min-width: 450px;
     height: 100vh;
+    position: relative;
     box-shadow: 0 0 15px 10px rgb(0, 0, 0, 0.2);
 
     .header--image {
@@ -25,6 +28,28 @@ html {
       margin: 0 auto 2rem auto;
       padding-top: 2rem;
       display: block;
+    }
+
+    .back--to--start {
+      background-color: $red;
+      border: none;
+      color: white;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      padding: 0.2em 2em;
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      font-family: 'DS Marker Felt', sans-serif;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+      &:hover {
+        background-color: #df0000;
+      }
     }
   }
 }

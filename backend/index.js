@@ -60,6 +60,7 @@ app.post('/api/word', async (req, res) => {
     res.status(404).json({ error: 'Could not find word!' });
   } else {
     correctWord = chosenWord;
+    console.log(correctWord);
     startTime = new Date();
 
     res.status(200).json({ msg: "Don't try to cheat!" });
