@@ -12,7 +12,6 @@
     "sass:watch": "sass ./sass/style.scss ./src/index.css --watch"
   },
   "dependencies": {
-    "cypress": "^14.2.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

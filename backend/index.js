@@ -11,11 +11,6 @@ const app = express();
 app.use(express.json());
 app.set('view engine', 'pug');
 
-app.use((req, res, next) => {
-  console.log(req.method, req.url);
-  next();
-});
-
 app.get('/', async (req, res) => {
   const buf = await fs.readFile('../frontend/dist/index.html');
   const html = buf.toString();
@@ -65,7 +60,6 @@ app.post('/api/word', async (req, res) => {
     res.status(404).json({ error: 'Could not find word!' });
   } else {
     correctWord = chosenWord;
-    console.log(correctWord);
     startTime = new Date();
 
     res.status(200).json({ msg: "Don't try to cheat!" });
@@ -91,7 +85,7 @@ app.post('/api/check-word', (req, res) => {
 
 /* //////////
 
-  
+  Send user info to mongoDB 
 */ //////////
 app.post('/api/user-info', async (req, res) => {
   const user = req.body.user;

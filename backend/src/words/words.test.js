@@ -15,15 +15,15 @@ describe('single word return', () => {
     expect(word).toEqual('spring');
   });
 
-  it('returns a random word', () => {
+  it('returns false', () => {
     const word = loadChosenWord(['boll', 'smed', 'spring', 'pokebowl', 'pumpor', 'pekade', 'moln'], 5, false);
 
-    expect(word).toEqual('no word available');
+    expect(word).toEqual(false);
   });
 
-  it('returns a random word', () => {
+  it('returns false', () => {
     const word = loadChosenWord(['bolla', 'smidd', 'spring', 'pokebowl', 'pumpa', 'pekade', 'skåll'], 5, true);
 
-    expect(word).toEqual('no word available');
+    expect(word).toEqual(false);
   });
 });
