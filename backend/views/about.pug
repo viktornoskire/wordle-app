@@ -6,13 +6,13 @@ html
 
     body 
         header 
-            img(src="/static/About.png", alt="About logo").headerImage
-        main.aboutPage
-            .textDiv
+            img(src="/static/About.png", alt="About logo").header--image
+        main(class="about--page")
+            div(class="about--page_text--content")
                 p Just like everyone else, I got hooked on Wordle—so I thought, “Why not make my own?” This little project is my homemade version of the internet’s favorite word-guessing game. 
                 p Built from scratch with a lot of coffee and questionable variable names, it’s here to give your brain a daily workout (and maybe a few humble pie moments). 
                 p Whether you’re a word wizard or just here to kill time, give it a go—and no peeking at the dictionary!
-                p.funMessage Have fun guessing the words!
-                p.mvh Kind regards, the Wordle-viktornoskire Team
-            button.backToStart
+                p(class="text-content_fun--message") Have fun guessing the words!
+                p(class="text--content_kind--regards") Kind regards, the Wordle-viktornoskire Team
+            button.back--to--start
                 a(href="/") Back to start

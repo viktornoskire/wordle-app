@@ -1,7 +1,7 @@
 @use './lib.scss' as *;
 
-.highscorePage {
-  .highscoreList {
+.highscore--page {
+  .higscore--page_highscore--list {
     display: block;
     padding: 0 1rem 0 1rem;
 
@@ -14,31 +14,31 @@
       }
     }
 
-    .highscoreTitles {
+    .highscore--list_highscore--titles {
       margin-top: 1rem;
       margin-bottom: 1rem;
     }
-    .userScores {
+    .highscore--list_user--score {
       font-size: 0.8rem;
       margin-top: 0.2rem;
-      .user {
+      .user--score_username {
         grid-column: 1;
       }
-      .time {
+      .user--score_time {
         grid-column: 2;
       }
-      .unique {
+      .user--score_word--unique {
         grid-column: 3;
       }
-      .length {
+      .user--score_word--length {
         grid-column: 4;
       }
-      .guesses {
+      .user--score_guesses {
         grid-column: 5;
       }
     }
   }
-  .backToStart {
+  .back--to--start {
     background-color: $red;
     border: none;
     color: white;

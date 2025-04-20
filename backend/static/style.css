@@ -1,39 +1,39 @@
-.highscorePage .highscoreList {
+.highscore--page .higscore--page_highscore--list {
   display: block;
   padding: 0 1rem 0 1rem;
 }
-.highscorePage .highscoreList li {
+.highscore--page .higscore--page_highscore--list li {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
 }
-.highscorePage .highscoreList li p {
+.highscore--page .higscore--page_highscore--list li p {
   display: block;
   margin: 0 auto 0 auto;
 }
-.highscorePage .highscoreList .highscoreTitles {
+.highscore--page .higscore--page_highscore--list .highscore--list_highscore--titles {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.highscorePage .highscoreList .userScores {
+.highscore--page .higscore--page_highscore--list .highscore--list_user--score {
   font-size: 0.8rem;
   margin-top: 0.2rem;
 }
-.highscorePage .highscoreList .userScores .user {
+.highscore--page .higscore--page_highscore--list .highscore--list_user--score .user--score_username {
   grid-column: 1;
 }
-.highscorePage .highscoreList .userScores .time {
+.highscore--page .higscore--page_highscore--list .highscore--list_user--score .user--score_time {
   grid-column: 2;
 }
-.highscorePage .highscoreList .userScores .unique {
+.highscore--page .higscore--page_highscore--list .highscore--list_user--score .user--score_word--unique {
   grid-column: 3;
 }
-.highscorePage .highscoreList .userScores .length {
+.highscore--page .higscore--page_highscore--list .highscore--list_user--score .user--score_word--length {
   grid-column: 4;
 }
-.highscorePage .highscoreList .userScores .guesses {
+.highscore--page .higscore--page_highscore--list .highscore--list_user--score .user--score_guesses {
   grid-column: 5;
 }
-.highscorePage .backToStart {
+.highscore--page .back--to--start {
   background-color: #ff0000;
   border: none;
   color: white;
@@ -45,26 +45,26 @@
   left: 28%;
   font-family: "DS Marker Felt", sans-serif;
 }
-.highscorePage .backToStart a {
+.highscore--page .back--to--start a {
   color: white;
   text-decoration: none;
 }
-.highscorePage .backToStart:hover {
+.highscore--page .back--to--start:hover {
   background-color: #df0000;
 }
 
-.aboutPage .textDiv {
+.about--page .about--page_text--content {
   width: 80%;
   margin: 0 auto;
 }
-.aboutPage .textDiv .funMessage {
+.about--page .about--page_text--content .text-content_fun--message {
   margin-top: 4rem;
 }
-.aboutPage .textDiv .mvh {
+.about--page .about--page_text--content .text--content_kind--regards {
   font-size: 0.8em;
   text-decoration: underline;
 }
-.aboutPage .backToStart {
+.about--page .back--to--start {
   background-color: #ff0000;
   border: none;
   color: white;
@@ -76,11 +76,11 @@
   left: 28%;
   font-family: "DS Marker Felt", sans-serif;
 }
-.aboutPage .backToStart a {
+.about--page .back--to--start a {
   color: white;
   text-decoration: none;
 }
-.aboutPage .backToStart:hover {
+.about--page .back--to--start:hover {
   background-color: #df0000;
 }
 
@@ -103,7 +103,7 @@ html body {
   height: 100vh;
   box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
 }
-html body .headerImage {
+html body .header--image {
   width: 80%;
   margin: 0 auto 2rem auto;
   padding-top: 2rem;

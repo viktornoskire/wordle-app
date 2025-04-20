@@ -1,19 +1,19 @@
 @use './lib.scss' as *;
 
-.aboutPage {
-  .textDiv {
+.about--page {
+  .about--page_text--content {
     width: 80%;
     margin: 0 auto;
-    .funMessage {
+    .text-content_fun--message {
       margin-top: 4rem;
     }
-    .mvh {
+    .text--content_kind--regards {
       font-size: 0.8em;
       text-decoration: underline;
     }
   }
 
-  .backToStart {
+  .back--to--start {
     background-color: $red;
     border: none;
     color: white;
