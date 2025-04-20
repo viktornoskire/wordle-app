@@ -1,18 +1,18 @@
 @use './lib.scss' as *;
 
-.winPage {
+.game_win--page {
   padding: 0 4rem;
   width: 70%;
   display: grid;
   grid-template-rows: auto auto auto;
   justify-content: center;
 
-  .winText {
+  .win--page_win--text {
     margin: 0 auto;
     font-size: 1.5em;
   }
 
-  .answerList {
+  .guess--list {
     display: grid;
     justify-content: center;
     font-size: 0.8em;
@@ -44,17 +44,17 @@
     }
   }
 
-  .user-form {
+  .user--form {
     display: grid;
     grid-template-rows: auto;
     font-size: 1.5em;
     margin-top: 5rem;
 
-    .usernameTitle {
+    .user--form_username--title {
       font-size: 1.2em;
       margin-bottom: 0.2em;
     }
-    .usernameInput {
+    .user--form_username--input {
       outline: none;
       border-radius: 1rem;
       border: 2px solid black;
@@ -66,7 +66,7 @@
         box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
       }
     }
-    .usernameConfirm {
+    .user--form_confirm--username {
       width: 60%;
       margin: 0.5em auto;
       background-color: $red;

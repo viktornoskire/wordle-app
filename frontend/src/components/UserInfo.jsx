@@ -4,17 +4,17 @@ export default function UserInfo({ answers, onSubmit }) {
   const [user, setUser] = useState('');
   const [error, setError] = useState(false);
 
-  let userPage = 'user-form';
+  let userPage = 'user--form';
 
   if (error) {
-    userPage += ' error-active';
+    userPage += ' error--active';
   }
 
   return (
-    <form className={userPage}>
-      <p className='usernameTitle'>Enter your username</p>
+    <form className={'win--page ' + userPage}>
+      <p className='user--form_username--title'>Enter your username</p>
       <input
-        className='usernameInput'
+        className='user--form_username--input'
         type='text'
         placeholder='Your username...'
         onChange={e => {
@@ -24,9 +24,9 @@ export default function UserInfo({ answers, onSubmit }) {
           setUser(e.target.value);
         }}
       />
-      <small className='user-error'>Invalid username</small>
+      <small className='user--error'>Invalid username</small>
       <button
-        className='usernameConfirm'
+        className='user--form_confirm--username'
         onClick={async e => {
           e.preventDefault();
           if (user.length > 0) {

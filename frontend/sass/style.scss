@@ -26,6 +26,7 @@ html {
     align-items: center;
     flex-direction: column;
     box-shadow: 0 0 15px 10px rgb(0, 0, 0, 0.2);
+    position: relative;
 
     .game_header {
       display: block;
@@ -40,6 +41,28 @@ html {
   .error--active {
     & .user--error {
       display: block;
+    }
+  }
+
+  .back--to--start {
+    background-color: $red;
+    border: none;
+    color: white;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    padding: 0.2em 2em;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-family: 'DS Marker Felt', sans-serif;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: #df0000;
     }
   }
 }

@@ -3,6 +3,7 @@
 .game_play--page {
   padding: 0 4rem;
   width: 70%;
+  position: relative;
 
   .user--form {
     display: grid;
@@ -45,7 +46,7 @@
     }
   }
 
-  .play--page_guess--list {
+  .guess--list {
     display: grid;
     justify-content: center;
 
@@ -54,7 +55,7 @@
       list-style-type: none;
       padding: 0;
 
-      .guess--list_letter {
+      .letter {
         padding: 1.2em;
         margin: 0 0.5em;
         border-radius: 0.5em;
@@ -73,23 +74,6 @@
       .incorrect {
         background-color: $red;
       }
-    }
-  }
-
-  .back--to--start {
-    background-color: $red;
-    border: none;
-    color: white;
-    border-radius: 15px;
-    font-size: 1.2rem;
-    padding: 0.2em 2em;
-    position: fixed;
-    bottom: 2rem;
-    left: 28%;
-    font-family: 'DS Marker Felt', sans-serif;
-
-    &:hover {
-      background-color: #df0000;
     }
   }
 }

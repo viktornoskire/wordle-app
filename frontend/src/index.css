@@ -1,30 +1,30 @@
-.startPage {
+.game_start--page {
   padding: 0 4rem;
   width: 70%;
 }
-.startPage .rules {
+.game_start--page .start--page_rules {
   font-size: 1.4em;
   margin-bottom: 4rem;
 }
-.startPage .rules li {
+.game_start--page .start--page_rules li {
   margin: 1rem 0;
 }
-.startPage .rules .rulesList .green {
+.game_start--page .start--page_rules .rules_rules--list .rules--list_green {
   color: #00c300;
 }
-.startPage .rules .rulesList .yellow {
+.game_start--page .start--page_rules .rules_rules--list .rules--list_yellow {
   color: #fff500;
 }
-.startPage .rules .rulesList .red {
+.game_start--page .start--page_rules .rules_rules--list .rules--list_red {
   color: #ff0000;
 }
-.startPage .user-form {
+.game_start--page .user--form {
   display: grid;
   margin: 0 auto;
   grid-template-columns: 70% 30%;
   grid-template-rows: auto auto auto;
 }
-.startPage .user-form .charMount {
+.game_start--page .user--form .user--form_letter--amount {
   outline: none;
   border-radius: 1rem;
   border: 2px solid black;
@@ -32,34 +32,34 @@
   font-size: 1rem;
   font-family: "DS Marker Felt", sans-serif;
 }
-.startPage .user-form .charMount:focus {
+.game_start--page .user--form .user--form_letter--amount:focus {
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
 }
-.startPage .user-form .user-error {
+.game_start--page .user--form .user--error {
   grid-row: 2;
   font-size: 1.2em;
   color: #ff0000;
 }
-.startPage .user-form .uniqueDiv {
+.game_start--page .user--form .user--form_unique--letters {
   display: flex;
-  gap: 2.5rem;
+  gap: 1rem;
   margin: 0 auto;
 }
-.startPage .user-form .uniqueDiv .uniqueLabel {
+.game_start--page .user--form .user--form_unique--letters .uniqueLabel {
   width: 0.4em;
 }
-.startPage .user-form .uniqueDiv .uniqueCheckbox {
+.game_start--page .user--form .user--form_unique--letters .unique--letters_checkbox {
   width: 25px;
   height: 25px;
   appearance: none;
   border: 2px solid #444;
-  border-radius: 4px;
+  border-radius: 8px;
   background-color: white;
 }
-.startPage .user-form .uniqueDiv .uniqueCheckbox:checked {
+.game_start--page .user--form .user--form_unique--letters .unique--letters_checkbox:checked {
   background-color: #00c300;
 }
-.startPage .user-form .playButton {
+.game_start--page .user--form .user--form_play--button {
   display: block;
   margin: 1rem auto;
   width: 100%;
@@ -72,14 +72,14 @@
   border: none;
   font-family: "DS Marker Felt", sans-serif;
 }
-.startPage .user-form .playButton:hover {
+.game_start--page .user--form .user--form_play--button:hover {
   background-color: #00e000;
 }
-.startPage .directionBtns {
+.game_start--page .start--page_direction--btns {
   display: flex;
   justify-content: space-between;
 }
-.startPage .directionBtns .highscoreBtn {
+.game_start--page .start--page_direction--btns .direction--btns_highscore {
   background-color: #fff500;
   border-radius: 15px;
   border: none;
@@ -87,14 +87,14 @@
   font-family: "DS Marker Felt", sans-serif;
   padding: 0.1rem 10%;
 }
-.startPage .directionBtns .highscoreBtn a {
+.game_start--page .start--page_direction--btns .direction--btns_highscore a {
   color: white;
   text-decoration: none;
 }
-.startPage .directionBtns .highscoreBtn:hover {
+.game_start--page .start--page_direction--btns .direction--btns_highscore:hover {
   background-color: #e2db00;
 }
-.startPage .directionBtns .aboutButton {
+.game_start--page .start--page_direction--btns .direction--btns_about {
   background-color: #ff0000;
   border-radius: 15px;
   border: none;
@@ -102,24 +102,25 @@
   font-family: "DS Marker Felt", sans-serif;
   padding: 0.1rem 10%;
 }
-.startPage .directionBtns .aboutButton a {
+.game_start--page .start--page_direction--btns .direction--btns_about a {
   color: white;
   text-decoration: none;
 }
-.startPage .directionBtns .aboutButton:hover {
+.game_start--page .start--page_direction--btns .direction--btns_about:hover {
   background-color: #df0000;
 }
 
-.playPage {
+.game_play--page {
   padding: 0 4rem;
   width: 70%;
+  position: relative;
 }
-.playPage .user-form {
+.game_play--page .user--form {
   display: grid;
   grid-template-columns: 60% 40%;
   grid-template-rows: auto auto;
 }
-.playPage .user-form .guessInput {
+.game_play--page .user--form .user--form_guess--input {
   border-radius: 15px;
   border: 2px solid black;
   outline: none;
@@ -127,10 +128,10 @@
   font-family: "DS Marker Felt", sans-serif;
   font-size: 1.2em;
 }
-.playPage .user-form .guessInput:focus {
+.game_play--page .user--form .user--form_guess--input:focus {
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
 }
-.playPage .user-form .guessBtn {
+.game_play--page .user--form .user--form_guess--button {
   background-color: #ff0000;
   border: none;
   color: white;
@@ -141,24 +142,24 @@
   margin: 0 auto;
   font-family: "DS Marker Felt", sans-serif;
 }
-.playPage .user-form .guessBtn:hover {
+.game_play--page .user--form .user--form_guess--button:hover {
   background-color: #df0000;
 }
-.playPage .user-error {
+.game_play--page .user--form .user--error {
   grid-row: 2;
   font-size: 1.2em;
   color: #ff0000;
 }
-.playPage .answerList {
+.game_play--page .guess--list {
   display: grid;
   justify-content: center;
 }
-.playPage .answerList ul {
+.game_play--page .guess--list ul {
   display: flex;
   list-style-type: none;
   padding: 0;
 }
-.playPage .answerList ul .letter {
+.game_play--page .guess--list ul .letter {
   padding: 1.2em;
   margin: 0 0.5em;
   border-radius: 0.5em;
@@ -167,53 +168,38 @@
   font-weight: 700;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
 }
-.playPage .answerList ul .correct {
+.game_play--page .guess--list ul .correct {
   background-color: #00c300;
 }
-.playPage .answerList ul .misplaced {
+.game_play--page .guess--list ul .misplaced {
   background-color: #fff500;
 }
-.playPage .answerList ul .incorrect {
+.game_play--page .guess--list ul .incorrect {
   background-color: #ff0000;
-}
-.playPage .backToStart {
-  background-color: #ff0000;
-  border: none;
-  color: white;
-  border-radius: 15px;
-  font-size: 1.2rem;
-  padding: 0.2em 2em;
-  position: fixed;
-  bottom: 2rem;
-  left: 28%;
-  font-family: "DS Marker Felt", sans-serif;
-}
-.playPage .backToStart:hover {
-  background-color: #df0000;
 }
 
-.winPage {
+.game_win--page {
   padding: 0 4rem;
   width: 70%;
   display: grid;
   grid-template-rows: auto auto auto;
   justify-content: center;
 }
-.winPage .winText {
+.game_win--page .win--page_win--text {
   margin: 0 auto;
   font-size: 1.5em;
 }
-.winPage .answerList {
+.game_win--page .guess--list {
   display: grid;
   justify-content: center;
   font-size: 0.8em;
 }
-.winPage .answerList ul {
+.game_win--page .guess--list ul {
   display: flex;
   list-style-type: none;
   padding: 0;
 }
-.winPage .answerList ul .letter {
+.game_win--page .guess--list ul .letter {
   padding: 1.2em;
   margin: 0 0.5em;
   border-radius: 0.5em;
@@ -222,26 +208,26 @@
   font-weight: 900;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
 }
-.winPage .answerList ul .correct {
+.game_win--page .guess--list ul .correct {
   background-color: #00c300;
 }
-.winPage .answerList ul .misplaced {
+.game_win--page .guess--list ul .misplaced {
   background-color: #fff500;
 }
-.winPage .answerList ul .incorrect {
+.game_win--page .guess--list ul .incorrect {
   background-color: #ff0000;
 }
-.winPage .user-form {
+.game_win--page .user--form {
   display: grid;
   grid-template-rows: auto;
   font-size: 1.5em;
   margin-top: 5rem;
 }
-.winPage .user-form .usernameTitle {
+.game_win--page .user--form .user--form_username--title {
   font-size: 1.2em;
   margin-bottom: 0.2em;
 }
-.winPage .user-form .usernameInput {
+.game_win--page .user--form .user--form_username--input {
   outline: none;
   border-radius: 1rem;
   border: 2px solid black;
@@ -249,10 +235,10 @@
   font-size: 1rem;
   font-family: "DS Marker Felt", sans-serif;
 }
-.winPage .user-form .usernameInput:focus {
+.game_win--page .user--form .user--form_username--input:focus {
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
 }
-.winPage .user-form .usernameConfirm {
+.game_win--page .user--form .user--form_confirm--username {
   width: 60%;
   margin: 0.5em auto;
   background-color: #ff0000;
@@ -263,7 +249,7 @@
   padding: 0.1rem 10%;
   color: white;
 }
-.winPage .user-form .usernameConfirm:hover {
+.game_win--page .user--form .user--form_confirm--username:hover {
   background-color: #df0000;
 }
 
@@ -283,24 +269,44 @@ html .game {
   width: 50%;
   max-width: 800px;
   min-width: 450px;
-  height: 100vh;
+  min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
   box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
-html .game .header {
+html .game .game_header {
   display: block;
   width: 70%;
   margin: 2rem auto;
 }
-html .user-error {
+html .user--error {
   display: none;
 }
-html .error-active .user-error {
+html .error--active .user--error {
   display: block;
+}
+html .back--to--start {
+  background-color: #ff0000;
+  border: none;
+  color: white;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  padding: 0.2em 2em;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-family: "DS Marker Felt", sans-serif;
+}
+html .back--to--start a {
+  color: white;
+  text-decoration: none;
+}
+html .back--to--start:hover {
+  background-color: #df0000;
 }
 
 /*# sourceMappingURL=index.css.map */

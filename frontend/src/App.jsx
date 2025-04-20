@@ -46,14 +46,6 @@ function App() {
             }}
           />
           <GuessList answers={answers} />
-          <button
-            className='back--to--start'
-            onClick={() => {
-              setWindow('start');
-              setAnswers([]);
-            }}>
-            Back to start
-          </button>
         </main>
       ) : (
         <main className='game_win--page'>
@@ -66,6 +58,18 @@ function App() {
             }}
           />
         </main>
+      )}
+      {window == 'playing' ? (
+        <button
+          className='back--to--start'
+          onClick={() => {
+            setWindow('start');
+            setAnswers([]);
+          }}>
+          Back to start
+        </button>
+      ) : (
+        ''
       )}
     </div>
   );
