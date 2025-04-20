@@ -15,7 +15,7 @@ function App() {
     <div className='game'>
       {window == 'start' || window == 'playing' ? <Header /> : <HeaderWinner />}
       {window == 'start' ? (
-        <main className='startPage'>
+        <main className='game_start--page'>
           <Rules />
           <small>Customize the word</small>
           <SettingsForm
@@ -24,17 +24,17 @@ function App() {
               setWindow('playing');
             }}
           />
-          <div className='directionBtns'>
-            <button className='highscoreBtn'>
+          <div className='start--page_direction--btns'>
+            <button className='direction--btns_highscore'>
               <a href='/highscores'>Highscores</a>
             </button>
-            <button className='aboutButton'>
+            <button className='direction--btns_about'>
               <a href='/about'>About</a>
             </button>
           </div>
         </main>
       ) : window == 'playing' ? (
-        <main className='playPage'>
+        <main className='game_play--page'>
           <GuessForm
             onGuess={async data => {
               if (data.result == true) {
@@ -47,7 +47,7 @@ function App() {
           />
           <GuessList answers={answers} />
           <button
-            className='backToStart'
+            className='back--to--start'
             onClick={() => {
               setWindow('start');
               setAnswers([]);
@@ -56,9 +56,9 @@ function App() {
           </button>
         </main>
       ) : (
-        <main className='winPage'>
-          <p className='winText'>You guessed the word in {answers.length} tries!</p>
-          <GuessList className='winningGuess' answers={answers} />
+        <main className='game_win--page'>
+          <p className='win--page_win--text'>You guessed the word in {answers.length} tries!</p>
+          <GuessList className='win--page_winning--guess' answers={answers} />
           <UserInfo
             answers={answers}
             onSubmit={() => {

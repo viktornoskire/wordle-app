@@ -1,11 +1,11 @@
 export default function GuessList({ answers }) {
   return (
-    <div className='answerList'>
+    <div className='play--page_guess--list'>
       {answers.map(answer => {
         return (
           <ul>
             {answer.map(letter => {
-              let className = 'letter ';
+              let className = 'guess--list_letter ';
               if (letter.result == 'correct') {
                 className += 'correct';
               } else if (letter.result == 'misplaced') {

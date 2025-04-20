@@ -4,15 +4,15 @@ export default function GuessForm({ onGuess }) {
   const [guessed, setGuessed] = useState('');
   const [error, setError] = useState(false);
 
-  let guessForm = 'user-form';
+  let guessForm = 'user--form';
 
   if (error) {
-    guessForm += ' error-active';
+    guessForm += ' error--active';
   }
 
   return (
     <form
-      className={guessForm}
+      className={'play--page ' + guessForm}
       onSubmit={async e => {
         e.preventDefault();
         const response = await fetch('/api/check-word', {
@@ -33,7 +33,7 @@ export default function GuessForm({ onGuess }) {
         }
       }}>
       <input
-        className='guessInput'
+        className='user--form_guess--input'
         type='text'
         placeholder='Your guess...'
         value={guessed}
@@ -44,8 +44,8 @@ export default function GuessForm({ onGuess }) {
           setGuessed(e.target.value);
         }}
       />
-      <small className='user-error'>Incorrect word length</small>
-      <button className='guessBtn' type='submit'>
+      <small className='user--error'>Incorrect word length</small>
+      <button className='user--form_guess--button' type='submit'>
         Guess
       </button>
     </form>

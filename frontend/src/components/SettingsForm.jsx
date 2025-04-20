@@ -5,15 +5,15 @@ export default function SettingsForm({ onSubmit }) {
   const [unique, setUnique] = useState(false);
   const [error, setError] = useState(false);
 
-  let settingClass = 'user-form';
+  let settingClass = 'user--form';
 
   if (error) {
-    settingClass += ' error-active';
+    settingClass += ' error--active';
   }
 
   return (
     <form
-      className={settingClass}
+      className={'start--page ' + settingClass}
       onSubmit={async e => {
         e.preventDefault();
         if (!isNaN(amount)) {
@@ -41,7 +41,7 @@ export default function SettingsForm({ onSubmit }) {
       <input
         type='text'
         placeholder='No. letters'
-        className='charMount'
+        className='user--form_letter--amount'
         onChange={e => {
           if (error) {
             setError(false);
@@ -49,16 +49,16 @@ export default function SettingsForm({ onSubmit }) {
           setAmount(Number(e.target.value));
         }}
       />
-      <small className='user-error'>Enter valid number</small>
-      <div className='uniqueDiv'>
-        <label className='uniqueLabel' htmlFor='unique'>
+      <small className='user--error'>Enter valid number</small>
+      <div className='user--form_unique--letters'>
+        <label className='unique--letters_label' htmlFor='unique--letters_checkbox'>
           Unique
           <br />
           letters
         </label>
         <input
           type='checkbox'
-          className='uniqueCheckbox'
+          className='unique--letters_checkbox'
           onChange={() => {
             if (unique) {
               setUnique(false);
@@ -68,7 +68,7 @@ export default function SettingsForm({ onSubmit }) {
           }}
         />
       </div>
-      <button className='playButton'>Play</button>
+      <button className='user--form_play--button'>Play</button>
     </form>
   );
 }

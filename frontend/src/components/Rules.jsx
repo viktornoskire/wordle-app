@@ -1,8 +1,8 @@
 export default function Rules() {
   return (
-    <div className='rules'>
-      <h3 className='rulesTitle'>Rules</h3>
-      <ol className='rulesList'>
+    <div className='start--page_rules'>
+      <h3 className='rules_rules--title'>Rules</h3>
+      <ol className='rules_rules--list'>
         <li>
           <strong>Choose your word length</strong> - Pick how many letters the secret word will have.
         </li>
@@ -12,9 +12,9 @@ export default function Rules() {
         <li>
           <strong>Use color clues</strong> -
           <br />
-          <strong className='green'>Green</strong>: right letter, right spot <br />
-          <strong className='yellow'>Yellow</strong>: right letter, misplaced <br />
-          <strong className='red'>Red</strong>: letter not in the word
+          <strong className='rules--list_green'>Green</strong>: right letter, right spot <br />
+          <strong className='rules--list_yellow'>Yellow</strong>: right letter, misplaced <br />
+          <strong className='rules--list_red'>Red</strong>: letter not in the word
         </li>
       </ol>
     </div>
